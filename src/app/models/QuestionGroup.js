@@ -14,6 +14,12 @@ class QuestionGroup extends Model {
     );
     return this;
   }
+
+  static associate(models) {
+    this.belongsTo(models.Exam, {
+      foreignKey: 'exam_id', as: 'exam',
+    });
+  }
 }
 
 export default QuestionGroup;

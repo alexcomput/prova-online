@@ -29,7 +29,7 @@ class ExamController {
     });
 
     if (!(await shema.isValid(req.body))) {
-      return res.status(400).json({error: 'Validade fails'});
+      return res.status(400).json({ error: 'Validade fails' });
     }
 
     const {name, note} = req.body;

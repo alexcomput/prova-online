@@ -14,7 +14,9 @@ import NotificationController from './app/controllers/NotificationController';
 import AvailableController from './app/controllers/AvailableController';
 
 import autMideware from './app/middewares/auth';
-import ExamController from "./app/controllers/ExamController";
+
+import ExamController from './app/controllers/ExamController';
+import GroupQuestionController from './app/controllers/GroupQuestionController';
 
 const routes = new Router();
 const upload = multer(multerConfig);
@@ -45,5 +47,9 @@ routes.put('/notifications/:id', NotificationController.update);
 routes.get('/exam', ExamController.index);
 routes.post('/exam', ExamController.store);
 routes.put('/exam', ExamController.update);
+
+routes.get('/group-question', GroupQuestionController.index);
+routes.post('/group-question', GroupQuestionController.store);
+routes.put('/group-question', GroupQuestionController.update);
 
 export default routes;
