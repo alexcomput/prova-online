@@ -1,11 +1,11 @@
 import Sequelize, { Model } from 'sequelize';
 
-class QuestioGroup extends Model {
+class QuestionGroup extends Model {
   static init(sequelize) {
     super.init(
       {
-        name: Sequelize.STRING,
-        note: Sequelize.STRING,
+        description: Sequelize.STRING,
+        note: Sequelize.TEXT,
         color: Sequelize.STRING,
       },
       {
@@ -16,4 +16,4 @@ class QuestioGroup extends Model {
   }
 }
 
-export default QuestioGroup;
+export default QuestionGroup;

@@ -15,6 +15,12 @@ class Exam extends Model {
     );
     return this;
   }
+
+  static associate(models) {
+    this.belongsTo(models.User, {
+      foreignKey: 'user_id', as: 'responsible',
+    });
+  }
 }
 
 export default Exam;

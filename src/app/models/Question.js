@@ -4,10 +4,10 @@ class Question extends Model {
   static init(sequelize) {
     super.init(
       {
-        text: Sequelize.STRING,
-        type: {
+        description: Sequelize.STRING,
+        type_question: {
           type: Sequelize.ENUM({
-            values: ['TEXT', 'TEXTAREA', 'SELECT', 'MULTSELECT'],
+            values: ['TEXT', 'TEXTAREA', 'SELECT', 'SELECTMULT', 'CHECK', 'CHECKMULT'],
           }),
         },
         body: Sequelize.JSON, // { 'FIELD': 'Descrição', 'VALUE': 'Valor do field'}

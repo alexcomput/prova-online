@@ -2,12 +2,7 @@ import { Router } from 'express';
 import multer from 'multer';
 import multerConfig from './config/multer';
 
-import acl from "express-acl";
-
-acl.config({
-  filename: 'nacl.json',
-  baseUrl: '/',
-});
+import acl from './acl';
 
 import UserController from './app/controllers/UserController';
 import SessionController from './app/controllers/SessionController';
@@ -19,6 +14,7 @@ import NotificationController from './app/controllers/NotificationController';
 import AvailableController from './app/controllers/AvailableController';
 
 import autMideware from './app/middewares/auth';
+import ExamController from "./app/controllers/ExamController";
 
 const routes = new Router();
 const upload = multer(multerConfig);
@@ -45,5 +41,9 @@ routes.get('/schedule', ScheduleController.index);
 
 routes.get('/notifications', NotificationController.index);
 routes.put('/notifications/:id', NotificationController.update);
+
+routes.get('/exam', ExamController.index);
+routes.post('/exam', ExamController.store);
+routes.put('/exam', ExamController.update);
 
 export default routes;
